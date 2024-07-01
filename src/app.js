@@ -1,10 +1,12 @@
 const express = require("express");
 const connectDB = require("./db/conn");
 require("dotenv").config();
+const cors = require("cors");
 const Query = require("./model/queryModel");
 const app = express();
 const port = process.env.PORT || 5000;
 app.use(express.json());
+app.use(cors());
 
 const startServer = async () => {
   try {
